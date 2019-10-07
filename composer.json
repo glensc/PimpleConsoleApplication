@@ -1,5 +1,7 @@
 {
     "name": "glen/pimple-console-application",
+    "description": "Extendable Pimple Console Application",
+    "license": "MIT",
     "authors": [
         {
             "name": "Elan Ruusamäe",
