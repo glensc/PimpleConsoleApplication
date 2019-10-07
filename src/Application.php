@@ -10,23 +10,18 @@ class Application extends BaseApplication
     /** @var Container */
     protected $container;
 
-    public function __construct()
+    public function __construct(Container $app = null)
     {
         parent::__construct();
-        $this->container = $this->createContainer();
+        $this->container = $app ?: new Container();
+        $this->registerProviders($this->container);
     }
 
     /**
-     * @return Container
+     * This should be overridden.
+     *
+     * @param Container $app
      */
-    protected function createContainer()
-    {
-        $app = new Container();
-        $this->registerProviders($app);
-
-        return $app;
-    }
-
     protected function registerProviders(Container $app)
     {
     }
