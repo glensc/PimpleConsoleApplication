@@ -6,5 +6,13 @@
             "email": "glen@pld-linux.org"
         }
     ],
-    "require": {}
+    "config": {
+        "platform": {
+            "php": "5.3.29"
+        },
+        "sort-packages": true
+    },
+    "require": {
+        "php": "^5.3.0 || ^7.0"
+    }
 }
