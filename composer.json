@@ -1,0 +1,10 @@
+{
+    "name": "glen/pimple-console-application",
+    "authors": [
+        {
+            "name": "Elan Ruusamäe",
+            "email": "glen@pld-linux.org"
+        }
+    ],
+    "require": {}
+}
