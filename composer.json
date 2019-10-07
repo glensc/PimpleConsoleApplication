@@ -12,7 +12,13 @@
         },
         "sort-packages": true
     },
+    "autoload": {
+        "psr-4": {
+            "glen\\PimpleConsoleApplication\\": "src/"
+        }
+    },
     "require": {
+        "symfony/console": "^2.8 || ^3 || ^4",
         "php": "^5.3.0 || ^7.0"
     }
 }
