@@ -5,7 +5,6 @@ namespace glen\PimpleConsoleApplication;
 use ED\Resizer\Command;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
-use Symfony\Component\Console\Application;
 
 class ConsoleCommandsProvider implements ServiceProviderInterface
 {
