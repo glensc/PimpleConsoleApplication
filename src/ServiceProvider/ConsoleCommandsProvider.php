@@ -1,8 +1,8 @@
 <?php
 
-namespace glen\PimpleConsoleApplication;
+namespace glen\PimpleConsoleApplication\ServiceProvider;
 
-use ED\Resizer\Command;
+use glen\PimpleConsoleApplication\Application;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
@@ -28,7 +28,6 @@ class ConsoleCommandsProvider implements ServiceProviderInterface
      */
     protected function getCommands()
     {
-        return array(
-        );
+        return array();
     }
 }
