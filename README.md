@@ -10,8 +10,8 @@ composer require glen/pimple-console-application
 # bin/console.php
 <?php
 
-use glen\PimpleConsoleApplication\Application;
+use glen\PimpleConsoleApplication\PimpleConsoleApplication;
 
-$app = new Application();
+$app = new PimpleConsoleApplication();
 $app->run();
 ```

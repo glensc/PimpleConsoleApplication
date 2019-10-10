@@ -3,9 +3,9 @@
 namespace glen\PimpleConsoleApplication;
 
 use Pimple\Container;
-use Symfony\Component\Console\Application as BaseApplication;
+use Symfony\Component\Console\Application;
 
-class Application extends BaseApplication
+class PimpleConsoleApplication extends Application
 {
     /** @var Container */
     protected $container;
