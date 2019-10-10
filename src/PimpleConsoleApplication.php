@@ -6,6 +6,8 @@ use glen\ConsoleLoggerServiceProvider\ConsoleLoggerServiceProvider;
 use glen\ConsoleLoggerServiceProvider\MonologServiceProvider;
 use Pimple\Container;
 use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 
 class PimpleConsoleApplication extends Application
 {
@@ -18,6 +20,28 @@ class PimpleConsoleApplication extends Application
         $this->container = $app ?: new Container();
         $this->registerLogger($this->container);
         $this->registerProviders($this->container);
+    }
+
+    /**
+     * Override to use same input and output
+     *
+     * @param InputInterface|null $input
+     * @param OutputInterface|null $output
+     * @return int
+     */
+    public function run(InputInterface $input = null, OutputInterface $output = null)
+    {
+        $app = $this->getContainer();
+
+        return parent::run($input ?: $app['console.input'], $output ?: $app['console.output']);
+    }
+
+    /**
+     * @return Container
+     */
+    public function getContainer()
+    {
+        return $this->container;
     }
 
     /**
@@ -41,13 +65,5 @@ class PimpleConsoleApplication extends Application
      */
     protected function registerProviders(Container $app)
     {
-    }
-
-    /**
-     * @return Container
-     */
-    public function getContainer()
-    {
-        return $this->container;
     }
 }
