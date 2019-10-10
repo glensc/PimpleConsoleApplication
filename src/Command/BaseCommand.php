@@ -4,6 +4,7 @@ namespace glen\PimpleConsoleApplication\Command;
 
 use glen\PimpleConsoleApplication\PimpleConsoleApplication;
 use Pimple\Container;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -20,6 +21,9 @@ abstract class BaseCommand extends Command
     /** @var OutputInterface */
     protected $output;
 
+    /** @var LoggerInterface */
+    protected $logger;
+
     /** @var string */
     protected $commandName;
 
@@ -30,6 +34,9 @@ abstract class BaseCommand extends Command
     {
         $this->output = $output;
         $this->input = $input;
+
+        $app = $this->getContainer();
+        $this->logger = $app['logger'];
     }
 
     /**
