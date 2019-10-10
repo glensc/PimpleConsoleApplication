@@ -2,7 +2,7 @@
 
 namespace glen\PimpleConsoleApplication\Command;
 
-use glen\PimpleConsoleApplication\Application;
+use glen\PimpleConsoleApplication\PimpleConsoleApplication;
 use Pimple\Container;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -59,7 +59,7 @@ abstract class BaseCommand extends Command
      */
     public function getContainer()
     {
-        /** @var Application $application */
+        /** @var PimpleConsoleApplication $application */
         $application = $this->getApplication();
 
         return $application->getContainer();

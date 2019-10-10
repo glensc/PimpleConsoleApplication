@@ -2,16 +2,16 @@
 
 namespace glen\PimpleConsoleApplication\ServiceProvider;
 
-use glen\PimpleConsoleApplication\Application;
+use glen\PimpleConsoleApplication\PimpleConsoleApplication;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
 class ConsoleCommandsProvider implements ServiceProviderInterface
 {
-    /** @var Application */
+    /** @var PimpleConsoleApplication */
     private $console;
 
-    public function __construct(Application $console)
+    public function __construct(PimpleConsoleApplication $console)
     {
         $this->console = $console;
     }
