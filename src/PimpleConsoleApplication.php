@@ -14,12 +14,19 @@ class PimpleConsoleApplication extends Application
     /** @var Container */
     protected $container;
 
+    /** @var string */
+    protected $name = 'UNKNOWN';
+
+    /** @var string */
+    protected $version = 'UNKNOWN';
+
+    /** @var bool */
+    private $initialized = false;
+
     public function __construct(Container $app = null)
     {
-        parent::__construct();
+        parent::__construct($this->name, $this->version);
         $this->container = $app ?: new Container();
-        $this->registerLogger($this->container);
-        $this->registerProviders($this->container);
     }
 
     /**
@@ -41,6 +48,12 @@ class PimpleConsoleApplication extends Application
      */
     public function getContainer()
     {
+        if ($this->initialized === false) {
+            $this->registerLogger($this->container);
+            $this->registerProviders($this->container);
+            $this->initialized = true;
+        }
+
         return $this->container;
     }
 
