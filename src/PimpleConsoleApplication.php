@@ -14,12 +14,18 @@ class PimpleConsoleApplication extends Application
     /** @var Container */
     protected $container;
 
+    /** @var string */
+    protected $name = 'UNKNOWN';
+
+    /** @var string */
+    protected $version = 'UNKNOWN';
+
     /** @var bool */
     private $initialized = false;
 
     public function __construct(Container $app = null)
     {
-        parent::__construct();
+        parent::__construct($this->name, $this->version);
         $this->container = $app ?: new Container();
     }
 
