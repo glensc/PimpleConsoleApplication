@@ -66,9 +66,7 @@ class PimpleConsoleApplication extends Application
             'monolog.name' => $this->getName(),
         ));
         $app->register(new ConsoleLoggerServiceProvider(), array(
-            'logger.console_logger.formatter.options' => array(
-                'format' => "%start_tag%%level_name%%end_tag% %message%%context%%extra%\n",
-            ),
+            'logger.console_logger.formatter.format' => "%start_tag%%level_name%%end_tag% %message%%context%%extra%\n",
         ));
     }
 
