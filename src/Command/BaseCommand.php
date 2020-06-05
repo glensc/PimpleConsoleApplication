@@ -3,7 +3,7 @@
 namespace glen\PimpleConsoleApplication\Command;
 
 use glen\PimpleConsoleApplication\PimpleConsoleApplication;
-use glen\PimpleConsoleApplication\Traits\MonologTrait;
+use glen\PimpleConsoleApplication\Traits\LoggerTrait;
 use Pimple\Container;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -11,7 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 abstract class BaseCommand extends Command
 {
-    use MonologTrait;
+    use LoggerTrait;
 
     const DEBUG = OutputInterface::VERBOSITY_DEBUG;
     const VERBOSE = OutputInterface::VERBOSITY_VERBOSE;
