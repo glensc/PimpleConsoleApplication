@@ -3,11 +3,11 @@
 namespace glen\PimpleConsoleApplication\Traits;
 
 use Psr\Log\LoggerInterface;
-use Psr\Log\LoggerTrait;
+use Psr\Log\LoggerTrait as PsrLoggerTrait;
 
-trait MonologTrait
+trait LoggerTrait
 {
-    use LoggerTrait;
+    use PsrLoggerTrait;
 
     /** @var LoggerInterface */
     protected $logger;
